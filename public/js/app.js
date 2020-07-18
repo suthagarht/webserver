@@ -7,16 +7,16 @@ console.log('Client side script')
 //     })
 // })
 
-fetch('http://127.0.0.1:3433/weather?address=boston').then((response) => {
-    response.json().then((data) => {
-        if (data.error) {
-            console.log(data.error)
-        } else {
-            console.log(data.location)
-            console.log(data.forecast[0])
-        }
-    })
-})
+// fetch('/weather?address=boston').then((response) => {
+//     response.json().then((data) => {
+//         if (data.error) {
+//             console.log(data.error)
+//         } else {
+//             console.log(data.location)
+//             console.log(data.forecast[0])
+//         }
+//     })
+// })
 
 // Load the form elemet [java script representation of that element will be returnd]
 const weatherForm = document.querySelector('form')
@@ -39,7 +39,7 @@ weatherForm.addEventListener('submit', (event) => {
     messageTwo.textContent = 'Loading ...'
     messageTwo.textContent = ""
 
-    fetch('http://127.0.0.1:3433/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
         if (data.error) {
             // console.log(data.error)

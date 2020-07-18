@@ -14,7 +14,8 @@ const hbs = require('hbs')
 // instantiate express
 const app = express()
 
-
+// heroku port
+const port = process.env.PORT || 3000
 
 // tell to use public dir
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -108,6 +109,6 @@ app.get('*', (req,res) => {
 //app.com/about
 //app.com/help
 
-app.listen(3433, () => {
-    console.log("The server is running")
+app.listen(port, () => {
+    console.log("The server is running port :" + port)
 })
