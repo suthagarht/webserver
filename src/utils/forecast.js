@@ -13,8 +13,10 @@ request({url, json: true}, (error, response) => {
         console.log(response.body.error) 
     } else {
         console.log(response.body.current.weather_descriptions)
+        // console.log(response.body)
         callback(undefined, {
-            forecastText: response.body.current.weather_descriptions
+            forecastText: response.body.current.weather_descriptions,
+            localTime: response.body.location.localtime
         })
     }
 })
